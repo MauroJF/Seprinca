@@ -13,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Desplazamiento suave para los enlaces del menú
+  // 2. Desplazamiento suave para los enlaces del menú y cierre automático en móvil
   const enlacesNav = document.querySelectorAll('nav a');
+  const navMenu = document.getElementById('nav-menu');
 
   enlacesNav.forEach(enlace => {
     enlace.addEventListener('click', (e) => {
@@ -22,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetId.startsWith('#')) {
         e.preventDefault();
         const seccionTarget = document.querySelector(targetId);
+        
+        // Cierra el menú desplegable en pantallas móviles tras hacer clic
+        if (navMenu && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+        }
+
         if (seccionTarget) {
           seccionTarget.scrollIntoView({ behavior: 'smooth' });
         }
@@ -31,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. Menú móvil (Hamburguesa)
   const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
 
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
@@ -53,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnRefresh.addEventListener('click', generarCaptcha);
   }
 
-  // Inicializar EmailJS (Coloca tus claves reales aquí)
+  // Inicializar EmailJS
   if (typeof emailjs !== 'undefined') {
     emailjs.init("MhcmJeRbmfrTN-UPk");
   }

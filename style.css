@@ -570,7 +570,9 @@ footer {
   }
 
   .hero-logo {
-    height: 140px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
   }
 
   nav {

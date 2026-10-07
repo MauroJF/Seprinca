@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://seprinca.net/sitemap.xml
+Sitemap: https://seprinca.net
