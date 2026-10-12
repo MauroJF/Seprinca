@@ -127,14 +127,14 @@ nav a:hover {
    3. SECCIÓN HERO (INICIO)
    ========================================== */
 .hero {
-  background: linear-gradient(rgba(74, 21, 75, 0.88), rgba(51, 14, 52, 0.92)), var(--morado);
-  color: var(--blanco);
+  background:  var(--blanco);
+  color: var(--texto);
   text-align: center;
   padding: 90px 20px 80px 20px;
 }
 
 .hero-logo {
-  width: 350px; /* Prueba con 350px, 400px o 450px según tu preferencia */
+  width: 250px; 
   height: auto;
   margin-bottom: 25px;
   filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.4));
@@ -186,9 +186,15 @@ nav a:hover {
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+  0% { 
+    box-shadow: 0 0 0 0 rgba(212, 143, 0, 0.7); /* Dorado oscuro más intenso */
+  }
+  70% { 
+    box-shadow: 0 0 0 15px rgba(212, 143, 0, 0); 
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(212, 143, 0, 0); 
+  }
 }
 
 /* ==========================================
