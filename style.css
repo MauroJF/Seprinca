@@ -235,33 +235,50 @@ nav a:hover {
   margin-top: 20px;
   flex-wrap: wrap;
 }
+/* ==========================================
+   ESTILO LIMPIO Y PROFESIONAL PARA TARJETAS
+   ========================================== */
 
 .tarjeta {
   background: var(--blanco-puro);
   border-top: 5px solid var(--morado-corporativo);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 25px;
+  padding: 30px;
   flex: 1;
   min-width: 280px;
   text-align: left;
   border-radius: 6px;
 }
 
+/* Alineamos los títulos internos de las tarjetas a la izquierda sin líneas flotantes */
 .tarjeta h3 {
   color: var(--morado-corporativo);
   margin-top: 0;
-  text-align: left;
+  margin-bottom: 15px;
+  text-align: left !important;
+  font-size: 1.3rem;
+}
+
+/* Removemos cualquier línea decorativa extra que se haya colado */
+.tarjeta h3::after {
+  display: none !important;
+}
+
+/* Aseguramos que los textos dentro de las tarjetas respiren bien */
+.tarjeta p, 
+.tarjeta ul {
+  text-align: justify;
+  margin: 0;
 }
 
 .tarjeta ul {
   padding-left: 20px;
-  margin: 0;
+  text-align: left; /* Las listas siempre lucen mejor alineadas a la izquierda */
 }
 
 .tarjeta li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
-
 .tarjeta-inferior {
   max-width: 800px;
   margin: 25px auto 0 auto;
@@ -645,3 +662,43 @@ footer {
   
 }
 
+/* ==========================================
+   REFINTAMIENTO DE BRANDING OFICIAL SEPRINCA
+   ========================================== */
+
+/* 1. Estilo formal para las listas de servicios imitando la identidad visual */
+#servicios .tarjeta ul li {
+  position: relative;
+  padding-left: 8px;
+  margin-bottom: 10px;
+}
+
+/* 2. Destacar los títulos de las tarjetas con una línea inferior decorativa corporativa */
+.tarjeta h3 {
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.tarjeta h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: var(--amarillo-vibrante); /* Toque de amarillo corporativo */
+}
+
+/* 3. Estilo elegante para el pie de foto institucional */
+.pie-imagen {
+  font-family: var(--textos);
+  font-style: italic;
+  color: var(--morado-profundo);
+  background-color: var(--gris-claro-frio);
+  padding: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
