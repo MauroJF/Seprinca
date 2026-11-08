@@ -2,12 +2,14 @@
    1. VARIABLES Y CONFIGURACIÓN GENERAL
    ========================================== */
 :root {
-  --morado: #4a154b;
-  --morado-oscuro: #330e34;
-  --amarillo: #f2c94c;
-  --gris-fondo: #f8f9fa;
+  --morado-corporativo: #513f99;
+  --morado-profundo: #351653;
+  --amarillo-vibrante: #fff200;
+  --gris-claro-frio: #f2f3f6;
   --texto: #333333;
-  --blanco: #ffffff;
+  --blanco-puro: #ffffff;
+  --tipografia-corporativa: Verdana, Geneva, sans-serif;
+  --textos: Verdana, Geneva, sans-serif;
 }
 
 html {
@@ -19,35 +21,48 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--textos);
   margin: 0;
   padding: 0;
   color: var(--texto);
   line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--tipografia-corporativa);
+  font-weight: bold;
+}
+
 h2 {
-  color: var(--morado);
+  color: var(--morado-corporativo);
   font-size: 2rem;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+h3 {
+  color: var(--morado-corporativo);
+  text-align: center;
 }
 
 section {
   scroll-margin-top: 80px;
+  text-align: left;
 }
 
 .subtitulo {
   max-width: 800px;
   margin: 0 auto 30px auto;
-  color: #666;
+  color: #666666;
+  text-align: center;
 }
 
 /* ==========================================
    2. HEADER Y NAVEGACIÓN
    ========================================== */
 header {
-  background-color: var(--morado);
-  color: var(--blanco);
+  background-color: var(--morado-corporativo);
+  color: var(--blanco-puro);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,15 +87,16 @@ header {
 
 .logo-texto h2 {
   margin: 0;
-  color: var(--amarillo);
+  color: var(--amarillo-vibrante);
   font-size: 1.3rem;
   line-height: 1;
+  text-align: left;
 }
 
 .logo-texto p {
   margin: 4px 0 0 0;
   font-size: 10px;
-  color: var(--blanco);
+  color: var(--blanco-puro);
 }
 
 nav ul {
@@ -92,7 +108,7 @@ nav ul {
 }
 
 nav a {
-  color: var(--blanco);
+  color: var(--blanco-puro);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -100,10 +116,10 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--amarillo);
+  color: var(--amarillo-vibrante);
 }
 
-/* Menú Hamburguesa (oculto en PC) */
+/* Menú Hamburguesa */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -119,7 +135,7 @@ nav a:hover {
 .menu-toggle span {
   width: 100%;
   height: 3px;
-  background-color: var(--blanco);
+  background-color: var(--blanco-puro);
   border-radius: 2px;
 }
 
@@ -127,25 +143,26 @@ nav a:hover {
    3. SECCIÓN HERO (INICIO)
    ========================================== */
 .hero {
-  background:  var(--blanco);
+  background: var(--blanco-puro);
   color: var(--texto);
   text-align: center;
   padding: 90px 20px 80px 20px;
 }
 
 .hero-logo {
-  width: 250px; 
+  width: 250px;
   height: auto;
   margin-bottom: 25px;
   filter: none;
   transition: transform 0.3s ease;
 }
+
 .hero-logo:hover {
   transform: scale(1.05);
 }
 
 .hero h1 {
-  color: var(--morado);
+  color: var(--morado-corporativo);
   font-size: 2.2rem;
   max-width: 850px;
   margin: 0 auto 15px auto;
@@ -155,18 +172,20 @@ nav a:hover {
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 25px auto;
+  text-align: center;
 }
 
 .hero .btn {
   display: inline-block;
   padding: 16px 36px;
   font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--blanco);
-  background: linear-gradient(135deg, var(--morado), var(--morado-oscuro));
+  font-weight: bold;
+  font-family: var(--tipografia-corporativa);
+  color: var(--blanco-puro);
+  background: linear-gradient(135deg, var(--morado-corporativo), var(--morado-profundo));
   border: none;
   border-radius: 50px;
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(81, 63, 153, 0.4);
   cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
@@ -177,8 +196,8 @@ nav a:hover {
 
 .hero .btn:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(240, 0, 228, 0.6);
-  background: linear-gradient(135deg, var(--morado), var(--morado-oscuro));
+  box-shadow: 0 10px 25px rgba(81, 63, 153, 0.6);
+  background: linear-gradient(135deg, var(--morado-corporativo), var(--morado-profundo));
 }
 
 .hero .btn:active {
@@ -187,13 +206,13 @@ nav a:hover {
 
 @keyframes pulse-glow {
   0% { 
-    box-shadow: 0 0 0 0 rgba(58, 28, 74, 0.5); 
+    box-shadow: 0 0 0 0 rgba(81, 63, 153, 0.5); 
   }
   70% { 
-    box-shadow: 0 0 0 15px rgba(58, 28, 74, 0); 
+    box-shadow: 0 0 0 15px rgba(81, 63, 153, 0); 
   }
   100% { 
-    box-shadow: 0 0 0 0 rgba(58, 28, 74, 0); 
+    box-shadow: 0 0 0 0 rgba(81, 63, 153, 0); 
   }
 }
 
@@ -206,7 +225,7 @@ nav a:hover {
 }
 
 .bg-light {
-  background-color: var(--gris-fondo);
+  background-color: var(--gris-claro-frio);
 }
 
 .tarjetas {
@@ -218,9 +237,9 @@ nav a:hover {
 }
 
 .tarjeta {
-  background: var(--blanco);
-  border-top: 5px solid var(--morado);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: var(--blanco-puro);
+  border-top: 5px solid var(--morado-corporativo);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 25px;
   flex: 1;
   min-width: 280px;
@@ -229,8 +248,9 @@ nav a:hover {
 }
 
 .tarjeta h3 {
-  color: var(--morado);
+  color: var(--morado-corporativo);
   margin-top: 0;
+  text-align: left;
 }
 
 .tarjeta ul {
@@ -256,7 +276,6 @@ nav a:hover {
 /* ==========================================
    5. IMÁGENES DESTACADAS
    ========================================== */
-/* Imagen Grande Centrada para "Quiénes Somos" */
 .imagen-nosotros-container {
   width: 100%;
   max-width: 950px;
@@ -272,7 +291,6 @@ nav a:hover {
   display: block;
 }
 
-/* Imagen en Ancho Completo para Servicios */
 .full-width-img-container {
   margin: 40px auto;
   text-align: center;
@@ -288,16 +306,17 @@ nav a:hover {
   max-width: 800px;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   margin: 0 auto;
   display: block;
 }
 
 .pie-imagen {
   font-style: italic;
-  color: #666;
+  color: #666666;
   font-size: 0.9rem;
   margin-top: 10px;
+  text-align: center;
 }
 
 /* ==========================================
@@ -311,18 +330,19 @@ nav a:hover {
 }
 
 .dep-card {
-  background: var(--blanco);
-  border-left: 4px solid var(--morado);
+  background: var(--blanco-puro);
+  border-left: 4px solid var(--morado-corporativo);
   padding: 20px;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   text-align: left;
 }
 
 .dep-card h3 {
   margin-top: 0;
-  color: var(--morado);
+  color: var(--morado-corporativo);
   font-size: 1.1rem;
+  text-align: left;
 }
 
 .dep-card ul {
@@ -339,7 +359,7 @@ nav a:hover {
 }
 
 .solvencia-item {
-  background-color: var(--blanco);
+  background-color: var(--blanco-puro);
   padding: 14px 18px;
   border-radius: 6px;
   border: 1px solid #e2e8f0;
@@ -348,7 +368,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
 .solvencia-item span {
@@ -365,7 +385,7 @@ nav a:hover {
 }
 
 .cliente {
-  background-color: var(--gris-fondo);
+  background-color: var(--gris-claro-frio);
   padding: 18px;
   border: 1px solid #e0e0e0;
   font-weight: 600;
@@ -373,14 +393,15 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 /* ==========================================
    7. FORMULARIO DE CONTACTO Y CAPTCHA
    ========================================== */
 .seccion-contacto {
-  background-color: #4a154b;
-  color: #ffffff;
+  background-color: var(--morado-corporativo);
+  color: var(--blanco-puro);
   padding: 60px 20px;
   text-align: center;
 }
@@ -391,7 +412,7 @@ nav a:hover {
 }
 
 .seccion-contacto h2 {
-  color: #ffffff;
+  color: var(--blanco-puro);
   font-size: 1.8rem;
   margin-bottom: 15px;
 }
@@ -401,10 +422,11 @@ nav a:hover {
   color: #d0dbe5;
   margin-bottom: 35px;
   line-height: 1.5;
+  text-align: center;
 }
 
 .form-card {
-  background: var(--morado-oscuro);
+  background: var(--morado-profundo);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   padding: 30px 25px;
@@ -418,22 +440,22 @@ nav a:hover {
 
 .form-group input,
 .form-group textarea {
-  font-family: inherit;
+  font-family: var(--textos);
   resize: vertical;
   width: 100%;
   padding: 12px 15px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   font-size: 0.95rem;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: var(--gris-claro-frio);
+  color: var(--texto);
   outline: none;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #f2c94c;
-  background-color: #ffffff;
+  border-color: var(--amarillo-vibrante);
+  background-color: var(--blanco-puro);
 }
 
 .captcha-row {
@@ -444,8 +466,8 @@ nav a:hover {
 }
 
 .captcha-box {
-  background-color: var(--morado);
-  color: #ffffff;
+  background-color: var(--morado-corporativo);
+  color: var(--blanco-puro);
   font-weight: bold;
   font-size: 1.2rem;
   letter-spacing: 3px;
@@ -466,8 +488,8 @@ nav a:hover {
 }
 
 .btn-refresh {
-  background-color: #f2c94c;
-  color: #111;
+  background-color: var(--amarillo-vibrante);
+  color: #111111;
   border: none;
   border-radius: 4px;
   padding: 10px 14px;
@@ -479,11 +501,12 @@ nav a:hover {
 
 .btn-submit {
   width: 100%;
-  background-color: #f2c94c;
+  background-color: var(--amarillo-vibrante);
   color: #111111;
   border: none;
   padding: 12px;
   font-weight: bold;
+  font-font-family: var(--tipografia-corporativa);
   font-size: 0.95rem;
   border-radius: 4px;
   cursor: pointer;
@@ -495,8 +518,8 @@ nav a:hover {
    8. FOOTER Y BOTÓN DE WHATSAPP
    ========================================== */
 footer {
-  background-color: var(--morado-oscuro);
-  color: var(--blanco);
+  background-color: var(--morado-profundo);
+  color: var(--blanco-puro);
   padding: 40px 20px 20px 20px;
   text-align: center;
 }
@@ -507,12 +530,14 @@ footer {
 }
 
 .footer-info h3 {
-  color: var(--amarillo);
+  color: var(--amarillo-vibrante);
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .footer-info p {
   margin: 3px 0;
+  text-align: center;
 }
 
 .footer-direccion {
@@ -523,14 +548,14 @@ footer {
 }
 
 .footer-whatsapp a {
-  color: var(--amarillo);
+  color: var(--amarillo-vibrante);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .footer-whatsapp a:hover {
-  color: #ffffff;
+  color: var(--blanco-puro);
   text-decoration: underline;
 }
 
@@ -539,7 +564,7 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 15px;
   font-size: 0.85rem;
-  color: #ccc;
+  color: #cccccc;
 }
 
 .whatsapp-float {
@@ -549,7 +574,7 @@ footer {
   width: 60px;
   height: 60px;
   background-color: #25d366;
-  color: #ffffff;
+  color: var(--blanco-puro);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -570,7 +595,7 @@ footer {
 }
 
 /* ==========================================
-   9. ADAPTACIÓN RESPONSIVA (MÓVILES Y TABLETS)
+   9. ADAPTACIÓN RESPONSIVA
    ========================================== */
 @media (max-width: 850px) {
   .menu-toggle {
@@ -589,9 +614,9 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--morado-oscuro);
+    background-color: var(--morado-profundo);
     padding: 20px 0;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   }
 
   nav.active {
@@ -617,4 +642,6 @@ footer {
     width: 28px;
     height: 28px;
   }
+  
 }
+
